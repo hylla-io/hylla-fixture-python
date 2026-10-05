@@ -2,7 +2,7 @@ import math
 
 
 def round_half_up(x: float) -> int:
-    return math.floor(x + 0.5)
+    return max(0, math.floor(x + 0.5))
 
 
 def format_cents(cents: int) -> str:
