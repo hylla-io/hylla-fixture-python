@@ -1,6 +1,6 @@
 from .catalog import Catalog
 from .even import is_even
-from .money import format_cents
+from .money import format_money
 
 
 def render_report(catalog: Catalog, rate_percent: int) -> str:
@@ -8,7 +8,7 @@ def render_report(catalog: Catalog, rate_percent: int) -> str:
     return "\n".join(
         [
             f"items: {catalog.count()} ({parity})",
-            f"subtotal: {format_cents(catalog.subtotal())}",
-            f"total: {format_cents(catalog.total(rate_percent))}",
+            f"subtotal: {format_money(catalog.subtotal())}",
+            f"total: {format_money(catalog.total(rate_percent))}",
         ]
     )

@@ -1,6 +1,6 @@
 [project]
 name = "hylla-fixture-python"
-version = "0.1.0"
+version = "0.2.0"
 description = "A tiny catalog used as a Hylla ingest fixture."
 license = "MIT"
 requires-python = ">=3.12"

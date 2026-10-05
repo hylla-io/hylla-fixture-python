@@ -1,3 +1,4 @@
+from .discount import apply_discount
 from .pricing import Priced
 from .tax import apply_tax
 
@@ -16,4 +17,5 @@ class Catalog:
         return sum(item.price_cents() for item in self.items)
 
     def total(self, rate_percent: int) -> int:
-        return apply_tax(self.subtotal(), rate_percent)
+        bulk = 10 if self.count() >= 3 else 0
+        return apply_tax(apply_discount(self.subtotal(), bulk), rate_percent)
